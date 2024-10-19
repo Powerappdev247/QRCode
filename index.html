@@ -43,7 +43,7 @@
          .balloon {
             width: 80px; /* Adjust size of SVG balloon */
             animation: wiggle 4s infinite ease-in-out;
-            z-index: 0; /* Ensure balloons are behind the message box */
+            z-index: 2; /* Ensure balloons are behind the message box */
             position: absolute;
             top: -60px;
         }
@@ -99,7 +99,7 @@
             background-color: #ff6347;
             top: -10px;
             animation: fall 5s infinite ease-in-out;
-            z-index: 0; /* Ensure confetti is behind the message box */
+            z-index: 3; /* Ensure confetti is behind the message box */
         }
 
         /* Responsive design for mobile devices */
