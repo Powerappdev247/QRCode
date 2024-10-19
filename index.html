@@ -110,13 +110,13 @@ p {
 }
 
         /* Mobile-specific styles (hide desktop message box and show mobile message box) */
-        .mobile-message-box {
+        .message-box {
             display: none;
         }
 
         /* Responsive Design for Mobile Devices */
         @media (max-width: 768px) {
-            .message-box {
+            .mobile-message-box {
                 margin-top: 120px;
                 padding: 15px;
                 width: 90%;
@@ -151,7 +151,7 @@ p {
             }
 
             /* Show the mobile version */
-            .mobile-message-box {
+            .message-box-mobile {
                 display: block;
                 text-align: center;
                 background: white;
@@ -164,12 +164,12 @@ p {
                 z-index: 1;
             }
 
-            .mobile-message-box h1 {
+            .message-box-mobile h1 {
                 font-size: 1.4rem;
                 color: #ff6347;
             }
 
-            .mobile-message-box p {
+            .message-box-mobile p {
                 font-size: 1rem;
                 color: #333;
                 margin-top: 15px;
@@ -196,17 +196,17 @@ p {
 
         /* Media Query for 320px and smaller */
         @media (max-width: 320px) {
-            .mobile-message-box {
+            .message-box-mobile {
                 padding: 10px;
                 width: 95%;
                 margin: 80px auto;
             }
 
-            .mobile-message-box h1 {
+            .message-box-mobile h1 {
                 font-size: 1.2rem; /* Smaller font for smaller screens */
             }
 
-            .mobile-message-box p {
+            .message-box-mobile p {
                 font-size: 0.9rem; /* Adjust the font size for the paragraph */
             }
 
@@ -223,7 +223,7 @@ p {
             }
 
             /* Ensure some extra spacing between the top of the page and the message */
-            .mobile-message-box {
+            .message-box-mobile {
                 margin-top: 50px;
             }
         }
@@ -264,13 +264,13 @@ p {
     </div>
 
     <div class="message-box-mobile" style="display: none;">
-        <div class="balloon balloon-left">
+        <div class="mobile-balloon mobile-balloon-left">
             <img src="https://svgshare.com/i/1BgN.svg" alt="Left Balloon">
         </div>
 
         <h1>Happy Birthday,🎂🥳🥂 Micheal!</h1>
 
-        <div class="balloon balloon-right">
+        <div class="mobile-balloon mobile-balloon-right">
             <img src="https://svgshare.com/i/1BgN.svg" alt="Right Balloon">
         </div>
 
