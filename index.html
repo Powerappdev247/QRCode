@@ -82,17 +82,17 @@
         }
 
         /* Confetti styling */
-        #confetti {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 3; /* Ensures confetti is in front */
+         .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6347;
+            top: -10px;
+            animation: fall 5s infinite ease-in-out;
+            z-index: 0; /* Ensure confetti is behind the message box */
         }
 
-        /* Responsive Design for Mobile Devices */
+        /* Responsive design for mobile devices */
         @media (max-width: 768px) {
             h1 {
                 font-size: 1.5rem;
@@ -102,26 +102,27 @@
                 font-size: 1rem;
             }
 
-            .balloon img {
+            .balloon {
                 width: 60px; /* Smaller balloons for mobile */
             }
 
-            .balloon-left {
+            .balloon.left {
                 left: -30px;
             }
 
-            .balloon-right {
+            .balloon.right {
                 right: -30px;
+            }
+
+            /* Confetti for mobile */
+            .confetti {
+                width: 7px;
+                height: 7px;
             }
         }
 
-        /* Mobile view (less than 480px) */
+        /* For small screens (less than 480px) */
         @media (max-width: 480px) {
-            .message-box {
-                margin-top: 20px;
-                padding: 10px;
-            }
-
             h1 {
                 font-size: 1.3rem;
             }
@@ -130,44 +131,51 @@
                 font-size: 0.9rem;
             }
 
-            .balloon img {
+            .balloon {
                 width: 50px; /* Even smaller balloons */
             }
 
-            .balloon-left {
+            .balloon.left {
                 left: -20px;
             }
 
-            .balloon-right {
+            .balloon.right {
                 right: -20px;
+            }
+
+            /* Confetti for small screens */
+            .confetti {
+                width: 5px;
+                height: 5px;
             }
         }
 
         /* Media Query for 320px and smaller */
         @media (max-width: 320px) {
-            .wrapper {
-                width: 100%;
-                margin: 0 auto;
-            }
-
             h1 {
-                font-size: 1.2rem; /* Smaller font for smaller screens */
+                font-size: 1.1rem; /* Smaller font for tiny screens */
             }
 
             p {
-                font-size: 0.8rem; /* Adjust the font size for the paragraph */
+                font-size: 0.8rem;
             }
 
-            .balloon img {
-                width: 40px;
+            .balloon {
+                width: 40px; /* Tiny balloons */
             }
 
-            .balloon-left {
+            .balloon.left {
                 left: -10px;
             }
 
-            .balloon-right {
+            .balloon.right {
                 right: -10px;
+            }
+
+            /* Confetti for tiny screens */
+            .confetti {
+                width: 4px;
+                height: 4px;
             }
         }
     </style>
