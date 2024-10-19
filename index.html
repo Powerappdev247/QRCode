@@ -5,112 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Happy Birthday!</title>
     <style>
-        /* General page styling */
-       body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f8ff;
-    overflow: auto; /* Allow scrolling if content overflows */
-    position: relative;
-}
+        /* General Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto; /* Allow scrolling */
+        }
 
+        /* Desktop Message Box */
         .message-box {
-    text-align: center;
-    background: white;
-    padding: 20px; /* Reduced padding for smaller screens */
-    border-radius: 15px;
-    /* Drop shadow effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
-                0 6px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
-    position: relative;
-    z-index: 1; /* Ensure the message box is on top */
-    max-width: 90%; /* Limit the width to make it responsive */
-    overflow: auto; /* Allow scrolling for the message box */
-}
-
-        /* Animations for fading in */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+                        0 6px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+            position: relative;
+            z-index: 1;
+            max-width: 90%;
+            margin-top: 50px;
+            width: 80%;
+            min-height: 300px;
         }
 
-h1 {
-    font-size: 2rem; /* Responsive font size */
-    color: #ff6347;
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-    position: relative;
-}
-
-p {
-    font-size: 1.2rem; /* Responsive font size */
-    color: #000000;
-    margin-top: 20px;
-}
-
-                /* Confetti Animation */
-                .confetti {
+        /* Balloon styling */
+        .balloon {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff6347;
-            top: -10px;
-            animation: fall 5s infinite ease-in-out;
-            z-index: 2; /* Ensure the message box is on behind the confetti */
+            top: -40px;
+            animation: wiggle 2s infinite ease-in-out;
         }
 
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0); }
-            100% { transform: translateY(100vh) rotate(360deg); }
+        .balloon img {
+            width: 100px; /* Adjust the size for the balloons */
         }
 
-      /* Balloon styling */
-.balloon {
-    width: 100px; /* Adjust the size for smaller screens */
-    position: relative;
-    animation: wiggle 2s infinite ease-in-out;
-}
+        .balloon-left {
+            left: -50px;
+        }
 
-        /* Balloon wiggle animation */
+        .balloon-right {
+            right: -50px;
+        }
+
+        /* Wiggle animation for the balloons */
         @keyframes wiggle {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
         }
 
-      /* Balloon Alignment */
-.balloon-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: -120px; /* Adjust to move the balloon to the left of h1 */
-}
+        h1 {
+            font-size: 2rem; /* Responsive font size */
+            color: #ff6347;
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+        }
 
-.balloon-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: -120px; /* Adjust to move the balloon to the right of h1 */
-}
+        p {
+            font-size: 1.2rem; /* Responsive font size */
+            color: #000000;
+            margin-top: 20px;
+        }
 
-/* Wiggle animation for the balloons */
-@keyframes wiggle {
-    0%, 100% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-}
+        /* Confetti styling */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999; /* Ensures confetti is in front of everything */
+        }
 
         /* Mobile-specific styles (hide desktop message box and show mobile message box) */
-        .mobile-message-box{
+        .mobile-message-box {
             display: none;
         }
 
@@ -151,7 +129,7 @@ p {
             }
 
             /* Show the mobile version */
-            .message-box-mobile {
+            .mobile-message-box {
                 display: block;
                 text-align: center;
                 background: white;
@@ -164,12 +142,12 @@ p {
                 z-index: 1;
             }
 
-            .message-box-mobile h1 {
+            .mobile-message-box h1 {
                 font-size: 1.4rem;
                 color: #ff6347;
             }
 
-            .message-box-mobile p {
+            .mobile-message-box p {
                 font-size: 1rem;
                 color: #333;
                 margin-top: 15px;
@@ -196,17 +174,17 @@ p {
 
         /* Media Query for 320px and smaller */
         @media (max-width: 320px) {
-            .message-box-mobile {
+            .mobile-message-box {
                 padding: 10px;
                 width: 95%;
                 margin: 80px auto;
             }
 
-            .message-box-mobile h1 {
+            .mobile-message-box h1 {
                 font-size: 1.2rem; /* Smaller font for smaller screens */
             }
 
-            .message-box-mobile p {
+            .mobile-message-box p {
                 font-size: 0.9rem; /* Adjust the font size for the paragraph */
             }
 
@@ -223,7 +201,7 @@ p {
             }
 
             /* Ensure some extra spacing between the top of the page and the message */
-            .message-box-mobile {
+            .mobile-message-box {
                 margin-top: 50px;
             }
         }
@@ -232,12 +210,19 @@ p {
 </head>
 <body>
 
-    <!-- Birthday message in the center -->
+      <!-- Desktop Message Box -->
     <div class="message-box">
-        <img src="https://svgshare.com/i/1BgN.svg" alt="Balloon" class="balloon left">
-        <h1>Happy Birthday,🎂🥳🥂 Micheal!</h1>
-        <img src="https://svgshare.com/i/1BgN.svg" alt="Balloon" class="balloon right">
-        <p>Remember to read this and smile from within when you are having a busy day.
+        <div class="balloon balloon-left">
+            <img src="https://svgshare.com/i/1BgN.svg" alt="Left Balloon">
+        </div>
+
+         <h1>Happy Birthday,🎂🥳🥂 Michael!</h1>
+
+        <div class="balloon balloon-right">
+            <img src="https://svgshare.com/i/1BgN.svg" alt="Right Balloon">
+        </div>
+
+                <p>Remember to read this and smile from within when you are having a busy day.
             Oh! I want you to read it everyday 😂</p>
             
           <p>I have profiled you 😂 and what can I say? 
@@ -257,24 +242,27 @@ p {
             Thank you for consciously and subconsciously loving me. 
             I love the way you love me. Thank you for all the efforts you put in. </p> 
             
-         <p>I love you so much, Micheal Tómilọ́ba. 
+         <p>I love you so much, Michael Tómilọ́ba. 
             Happy birthday, Baby boo!
             </p>
-
     </div>
 
-    <div class="message-box-mobile" style="display: none;">
+    <!-- Mobile Message Box -->
+    <div class="mobile-message-box">
         <div class="mobile-balloon mobile-balloon-left">
             <img src="https://svgshare.com/i/1BgN.svg" alt="Left Balloon">
         </div>
 
-        <h1>Happy Birthday,🎂🥳🥂 Micheal!</h1>
+        <h1>Happy Birthday!</h1>
 
         <div class="mobile-balloon mobile-balloon-right">
             <img src="https://svgshare.com/i/1BgN.svg" alt="Right Balloon">
         </div>
 
-        <p>I have profiled you 😂 and what can I say? 
+                        <p>Remember to read this and smile from within when you are having a busy day.
+            Oh! I want you to read it everyday 😂</p>
+            
+          <p>I have profiled you 😂 and what can I say? 
             You are my man that used to send sweet mails once upon a time 😂.
             You are a happy person by default and you are so full of life. The most beautiful part is that the devil does not have what it takes to take that away from you. 
             I think I finally figured out why you claim not to love parties. I mean, for someone who deserves to be celebrated every single day, getting bored of routine is totally understandable. Don't forget to pop wine casually sha 😌. 
@@ -291,7 +279,7 @@ p {
             Thank you for consciously and subconsciously loving me. 
             I love the way you love me. Thank you for all the efforts you put in. </p> 
             
-         <p>I love you so much, Micheal Tómilọ́ba. 
+         <p>I love you so much, Michael Tómilọ́ba. 
             Happy birthday, Baby boo!
             </p>
     </div>
