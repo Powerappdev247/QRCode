@@ -38,11 +38,12 @@
         }
 
 h1 {
-    font-size: 2.5rem; /* Responsive font size */
+    font-size: 2rem; /* Responsive font size */
     color: #ff6347;
-    display: inline-flex; /* Allow for alignment with balloons */
-    align-items: center; /* Center align the balloons vertically */
-    margin: 0; /* Remove default margin */
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    position: relative;
 }
 
 p {
@@ -67,12 +68,12 @@ p {
             100% { transform: translateY(100vh) rotate(360deg); }
         }
 
-        /* Balloon SVG styling */
-        .balloon {
-            width: 80px; /* Adjust size of SVG balloon */
-            animation: wiggle 4s infinite ease-in-out;
-            z-index: 0; /* Ensure balloons are behind the message box */
-        }
+      /* Balloon styling */
+.balloon {
+    width: 100px; /* Adjust the size for smaller screens */
+    position: relative;
+    animation: wiggle 2s infinite ease-in-out;
+}
 
         /* Balloon wiggle animation */
         @keyframes wiggle {
@@ -81,14 +82,71 @@ p {
             100% { transform: translateY(0); }
         }
 
-        /* Balloon positions */
-        .balloon.left {
-            margin-right: 10px; /* Space between left balloon and text */
-        }
+      /* Balloon Alignment */
+.balloon-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -120px; /* Adjust to move the balloon to the left of h1 */
+}
 
-        .balloon.right {
-            margin-left: 10px; /* Space between right balloon and text */
-        }
+.balloon-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -120px; /* Adjust to move the balloon to the right of h1 */
+}
+
+/* Wiggle animation for the balloons */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .balloon {
+        width: 70px; /* Smaller balloons for mobile */
+    }
+
+    .balloon-left {
+        margin-left: -80px; /* Adjust margin for smaller screen */
+    }
+
+    .balloon-right {
+        margin-right: -80px; /* Adjust margin for smaller screen */
+    }
+
+    .message-box {
+        padding: 15px; /* Less padding for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Even smaller font size for very small screens */
+    }
+
+    .balloon {
+        width: 50px; /* Even smaller balloons */
+    }
+
+    .balloon-left {
+        margin-left: -60px;
+    }
+
+    .balloon-right {
+        margin-right: -60px;
+    }
+}
 
     </style>
 </head>
