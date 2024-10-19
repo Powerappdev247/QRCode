@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        /* General page styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5fb4ff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Birthday message box */
+        .message-box {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1; /* Ensure the message box is on top */
+            position: relative;
+        }
+
+        /* Animations for fading in */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Responsive font size */
+            color: #ff6347;
+            display: inline-flex; /* Allow for alignment with balloons */
+            align-items: center; /* Center align the balloons vertically */
+            margin: 0; /* Remove default margin */
+        }
+
+        p {
+            font-size: 1.2rem; /* Responsive font size */
+            color: #000000;
+            margin-top: 20px;
+        }
+
+                /* Confetti Animation */
+                .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6347;
+            top: -10px;
+            animation: fall 5s infinite ease-in-out;
+            z-index: 2; /* Ensure the message box is on behind the confetti */
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Balloon SVG styling */
+        .balloon {
+            width: 80px; /* Adjust size of SVG balloon */
+            animation: wiggle 4s infinite ease-in-out;
+            z-index: 0; /* Ensure balloons are behind the message box */
+        }
+
+        /* Balloon wiggle animation */
+        @keyframes wiggle {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Balloon positions */
+        .balloon.left {
+            margin-right: 10px; /* Space between left balloon and text */
+        }
+
+        .balloon.right {
+            margin-left: 10px; /* Space between right balloon and text */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Birthday message in the center -->
+    <div class="message-box">
+        <img src="https://drive.google.com/file/d/1gMrCqZ_ekhrdMAitMUvgAWwsBo0YtbRv/view?usp=sharing" alt="Balloon" class="balloon left">
+        <h1>Happy Birthday,🎂🥳🥂 Micheal!</h1>
+        <img src="https://drive.google.com/file/d/1gMrCqZ_ekhrdMAitMUvgAWwsBo0YtbRv/view?usp=sharing" alt="Balloon" class="balloon right">
+        <p>Remember to read this and smile from within when you are having a busy day.
+            Oh! I want you to read it everyday 😂</p>
+            
+          <p>I have profiled you 😂 and what can I say? 
+            You are my man that used to send sweet mails once upon a time 😂.
+            You are a happy person by default and you are so full of life. The most beautiful part is that the devil does not have what it takes to take that away from you. 
+            I think I finally figured out why you claim not to love parties. I mean, for someone who deserves to be celebrated every single day, getting bored of routine is totally understandable. Don't forget to pop wine casually sha 😌. 
+            
+            You'll find a lot of happy emoji here because I am happy writing this. It's from my heart 🤗.</p>
+            
+          <p>I hope this gift encourages you to chase your dreams boldly and unapologetically. </p>
+            
+         <p>Thank you for being one of the few most important people in my life. Thanks for believing in me and always cheering. You are the best. 
+            Thank you for always expressing your financial concerns about me 😂, it has made me more conscious and willing to work on them. </p> 
+            
+          <p>Thank you for the MICHAEL effect, you've really rubbed off on me 🥺.
+            Thank you for being so selfless, now I wonder if there's a better way to love other than that. 
+            Thank you for consciously and subconsciously loving me. 
+            I love the way you love me. Thank you for all the efforts you put in. </p> 
+            
+         <p>I love you so much, Micheal Tómilọ́ba. 
+            Happy birthday, Baby boo 
+            </p>
+
+            
+        
+
+    </div>
+    </div>
+
+ <!-- Confetti elements (can add as many as you want) -->
+ <div class="confetti" style="left: 10%; background-color: #ff69b4; animation-delay: 0s;"></div>
+ <div class="confetti" style="left: 20%; background-color: #ff6347; animation-delay: 0.3s;"></div>
+ <div class="confetti" style="left: 30%; background-color: #ffd700; animation-delay: 0.6s;"></div>
+ <div class="confetti" style="left: 40%; background-color: #8a2be2; animation-delay: 0.9s;"></div>
+ <div class="confetti" style="left: 50%; background-color: #ff4500; animation-delay: 1.2s;"></div>
+ <div class="confetti" style="left: 60%; background-color: #00fa9a; animation-delay: 1.5s;"></div>
+ <div class="confetti" style="left: 70%; background-color: #1e90ff; animation-delay: 1.8s;"></div>
+ <div class="confetti" style="left: 80%; background-color: #ff69b4; animation-delay: 2.1s;"></div>
+ <div class="confetti" style="left: 90%; background-color: #ff6347; animation-delay: 2.4s;"></div>
+
+
+
+   <!-- Happy Birthday song -->
+   <audio id="birthday-audio" src="https://drive.google.com/file/d/1UYZNICxwmzPPpSqUqigHwZ_ngDVaX2jO/view?usp=sharing" preload="auto"></audio>
+
+   <script>
+    // Play the birthday song when the page is opened
+    window.onload = function() {
+        var audio = document.getElementById('birthday-audio');
+        audio.play().catch(function(error) {
+            console.log('Autoplay was prevented. Please press play:', error);
+        });
+    };
+</script>
+
+</body>
+</html>
