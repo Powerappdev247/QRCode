@@ -4,166 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
-    <style>
-        /* General page styling */
-       body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f8ff;
-    overflow: auto; /* Allow scrolling if content overflows */
-    position: relative;
-}
-
-        .message-box {
-    text-align: center;
-    background: white;
-    padding: 20px; /* Reduced padding for smaller screens */
-    border-radius: 15px;
-    /* Drop shadow effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
-                0 6px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
-    position: relative;
-    z-index: 1; /* Ensure the message box is on top */
-    max-width: 90%; /* Limit the width to make it responsive */
-    overflow: auto; /* Allow scrolling for the message box */
-}
-
-        /* Animations for fading in */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-h1 {
-    font-size: 2rem; /* Responsive font size */
-    color: #ff6347;
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-    position: relative;
-}
-
-p {
-    font-size: 1.2rem; /* Responsive font size */
-    color: #000000;
-    margin-top: 20px;
-}
-
-                /* Confetti Animation */
-                .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff6347;
-            top: -10px;
-            animation: fall 5s infinite ease-in-out;
-            z-index: 2; /* Ensure the message box is on behind the confetti */
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0); }
-            100% { transform: translateY(100vh) rotate(360deg); }
-        }
-
-      /* Balloon styling */
-.balloon {
-    width: 100px; /* Adjust the size for smaller screens */
-    position: relative;
-    animation: wiggle 2s infinite ease-in-out;
-}
-
-        /* Balloon wiggle animation */
-        @keyframes wiggle {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-
-      /* Balloon Alignment */
-.balloon-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: -120px; /* Adjust to move the balloon to the left of h1 */
-}
-
-.balloon-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: -120px; /* Adjust to move the balloon to the right of h1 */
-}
-
-/* Wiggle animation for the balloons */
-@keyframes wiggle {
-    0%, 100% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-}
-
-/* Responsive Design for Mobile Devices */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem; /* Smaller font size for mobile */
-    }
-
-    .balloon {
-        width: 70px; /* Smaller balloons for mobile */
-    }
-
-    .balloon-left {
-        margin-left: -80px; /* Adjust margin for smaller screen */
-    }
-
-    .balloon-right {
-        margin-right: -80px; /* Adjust margin for smaller screen */
-    }
-
-    .message-box {
-        padding: 15px; /* Less padding for smaller devices */
-        margin-top: 100px; /* Increase top margin for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.2rem; /* Even smaller font size for very small screens */
-    }
-
-    .balloon {
-        width: 50px; /* Even smaller balloons */
-    }
-
-    .balloon-left {
-        margin-left: -60px;
-    }
-
-    .balloon-right {
-        margin-right: -60px;
-    }
-
-    .message-box {
-        padding: 15px; /* Less padding */
-        margin-top: 120px; /* Extra margin for smaller screens */
-    }
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Birthday message in the center -->
     <div class="message-box">
-        <img src="https://svgshare.com/i/1BgN.svg" alt="Balloon" class="balloon left">
+        <img src="https://drive.google.com/file/d/1gMrCqZ_ekhrdMAitMUvgAWwsBo0YtbRv/view?usp=sharing" alt="Balloon" class="balloon left">
         <h1>Happy Birthday,🎂🥳🥂 Micheal!</h1>
-        <img src="https://svgshare.com/i/1BgN.svg" alt="Balloon" class="balloon right">
+        <img src="https://drive.google.com/file/d/1gMrCqZ_ekhrdMAitMUvgAWwsBo0YtbRv/view?usp=sharing" alt="Balloon" class="balloon right">
         <p>Remember to read this and smile from within when you are having a busy day.
             Oh! I want you to read it everyday 😂</p>
             
@@ -185,7 +34,7 @@ p {
             I love the way you love me. Thank you for all the efforts you put in. </p> 
             
          <p>I love you so much, Micheal Tómilọ́ba. 
-            Happy birthday, Baby boo!
+            Happy birthday, Baby boo 
             </p>
 
             
@@ -208,7 +57,7 @@ p {
 
 
    <!-- Happy Birthday song -->
-   <audio id="https://github.com/Powerappdev247/Mymusic/blob/1d62e18f3173ccdcc17d3cc4f017db8ca04140da/happy-birthday-220024.mp3" preload="auto"></audio>
+   <audio id="birthday-audio" src="https://drive.google.com/file/d/1UYZNICxwmzPPpSqUqigHwZ_ngDVaX2jO/view?usp=sharing" preload="auto"></audio>
 
    <script>
     // Play the birthday song when the page is opened
