@@ -44,7 +44,6 @@
             width: 15px; /* Reduced size of the balloons */
             animation: fallBalloon 6s infinite ease-in-out; /* Balloon fall animation */
             z-index: 3; /* Ensure balloons are in front of the message box */
-            animation: wiggle 4s infinite ease-in-out;
             position: absolute;
             top: -10px;
         }
@@ -65,13 +64,6 @@
             width: 15px; /* Adjust the size for the balloons */
         }
 
-
-            /* Balloon wiggle animation */
-        @keyframes wiggle {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
 
         /* Confetti fall animation */
         @keyframes fall {
