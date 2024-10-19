@@ -39,26 +39,31 @@
             width: 100%;
         }
 
-        /* Balloon styling */
-         .balloon {
-            width: 10px; /* Adjust size of SVG balloon */
-            animation: wiggle 4s infinite ease-in-out;
-            z-index: 2; /* Ensure balloons are behind the message box */
+   /* Balloon Styling */
+        .balloon {
+            width: 10px; /* Reduced size of the balloons */
+            animation: fallBalloon 6s infinite ease-in-out; /* Balloon fall animation */
+            z-index: 3; /* Ensure balloons are in front of the message box */
             position: absolute;
-            top: -40px;
+            top: -10px;
+        }
+
+        /* Balloon fall animation (slower than confetti) */
+        @keyframes fallBalloon {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
         }
 
         .balloon img {
             width: 10px; /* Adjust the size for the balloons */
         }
 
-        .balloon-left {
-            left: -40px;
-        }
-
-        .balloon-right {
-            right: -40px;
-        }
 
             /* Balloon wiggle animation */
         @keyframes wiggle {
@@ -111,19 +116,11 @@
             p {
                 font-size: 1rem;
             }
-
+            /* Confetti for mobile */
             .balloon {
-                width: 40px; /* Smaller balloons for mobile */
+                width: 10px;
+                height: 10px;
             }
-
-            .balloon.left {
-                left: -30px;
-            }
-
-            .balloon.right {
-                right: -30px;
-            }
-
             /* Confetti for mobile */
             .confetti {
                 width: 7px;
@@ -141,16 +138,10 @@
                 font-size: 0.9rem;
             }
 
+          /* Confetti for small screens */
             .balloon {
-                width: 30px; /* Even smaller balloons */
-            }
-
-            .balloon.left {
-                left: -20px;
-            }
-
-            .balloon.right {
-                right: -20px;
+                width: 10px;
+                height: 10px;
             }
 
             /* Confetti for small screens */
@@ -170,36 +161,23 @@
                 font-size: 0.8rem;
             }
 
-            .balloon {
-                width: 40px; /* Tiny balloons */
-            }
-
-            .balloon.left {
-                left: -10px;
-            }
-
-            .balloon.right {
-                right: -10px;
-            }
 
             /* Confetti for tiny screens */
             .confetti {
                 width: 4px;
                 height: 4px;
             }
+            
+            /* Confetti for tiny screens */
+            .confetti {
+                width: 8px;
+                height: 8px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- Balloons -->
-        <div class="balloon balloon-left">
-            <img src="https://svgshare.com/i/1BgN.svg" alt="Left Balloon">
-        </div>
-
-        <div class="balloon balloon-right">
-            <img src="https://svgshare.com/i/1BgN.svg" alt="Right Balloon">
-        </div>
 
         <!-- Message Box -->
         <div class="message-box">
@@ -245,18 +223,12 @@
 
 
 
-   <!-- Happy Birthday song -->
-   <audio id="birthday-audio" src="https://jmp.sh/WT8LoAfK" preload="auto"></audio>
-
-   <script>
-    // Play the birthday song when the page is opened
-    window.onload = function() {
-        var audio = document.getElementById('birthday-audio');
-        audio.play().catch(function(error) {
-            console.log('Autoplay was prevented. Please press play:', error);
-        });
-    };
-</script>
+    <!-- Balloon elements -->
+    <img class="balloon" style="left: 10%;" src="https://svgshare.com/i/1BgN.svg" alt="Balloon">
+    <img class="balloon" style="left: 30%;" src="https://svgshare.com/i/1BgN.svg" alt="Balloon">
+    <img class="balloon" style="left: 50%;" src="https://svgshare.com/i/1BgN.svg" alt="Balloon">
+    <img class="balloon" style="left: 70%;" src="https://svgshare.com/i/1BgN.svg" alt="Balloon">
+    <img class="balloon" style="left: 90%;" src="https://svgshare.com/i/1BgN.svg" alt="Balloon">
 
 </body>
 </html>
