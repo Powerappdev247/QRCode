@@ -44,9 +44,18 @@
             width: 80px; /* Adjust size of SVG balloon */
             animation: wiggle 4s infinite ease-in-out;
             z-index: 2; /* Ensure balloons are behind the message box */
-            position: absolute;
+            position: relative;
             top: -60px;
         }
+          /* Balloon and Text Alignment */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
 
         .balloon img {
             width: 80px; /* Adjust the size for the balloons */
@@ -74,7 +83,7 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(500px);
+                transform: translateY(800px);
                 opacity: 0;
             }
         }
@@ -192,6 +201,7 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="header-content">
         <!-- Balloons -->
         <div class="balloon balloon-left">
             <img src="https://svgshare.com/i/1BgN.svg" alt="Left Balloon">
