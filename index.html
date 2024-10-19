@@ -6,29 +6,30 @@
     <title>Happy Birthday!</title>
     <style>
         /* General page styling */
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #5fb4ff;
-            overflow: hidden;
-            position: relative;
-        }
+       body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    overflow: auto; /* Allow scrolling if content overflows */
+    position: relative;
+}
 
-        /* Birthday message box */
         .message-box {
-            text-align: center;
-            background: white;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s ease-in-out;
-            z-index: 1; /* Ensure the message box is on top */
-            position: relative;
-        }
+    text-align: center;
+    background: white;
+    padding: 20px; /* Reduced padding for smaller screens */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 1; /* Ensure the message box is on top */
+    max-width: 90%; /* Limit the width to make it responsive */
+    overflow: auto; /* Allow scrolling for the message box */
+}
 
         /* Animations for fading in */
         @keyframes fadeIn {
@@ -36,19 +37,19 @@
             100% { opacity: 1; }
         }
 
-        h1 {
-            font-size: 2.5rem; /* Responsive font size */
-            color: #ff6347;
-            display: inline-flex; /* Allow for alignment with balloons */
-            align-items: center; /* Center align the balloons vertically */
-            margin: 0; /* Remove default margin */
-        }
+h1 {
+    font-size: 2.5rem; /* Responsive font size */
+    color: #ff6347;
+    display: inline-flex; /* Allow for alignment with balloons */
+    align-items: center; /* Center align the balloons vertically */
+    margin: 0; /* Remove default margin */
+}
 
-        p {
-            font-size: 1.2rem; /* Responsive font size */
-            color: #000000;
-            margin-top: 20px;
-        }
+p {
+    font-size: 1.2rem; /* Responsive font size */
+    color: #000000;
+    margin-top: 20px;
+}
 
                 /* Confetti Animation */
                 .confetti {
