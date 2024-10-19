@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Happy Birthday!</title>
     <style>
         /* General page styling */
@@ -109,28 +109,25 @@ p {
     }
 }
 
- /* Responsive Design for Mobile Devices */
- @media (max-width: 768px) {
-            /* Hide the default message box and show the mobile one */
-            .message-box {
-                display: none;
-            }
+        /* Mobile-specific styles (hide desktop message box and show mobile message box) */
+        .mobile-message-box {
+            display: none;
+        }
 
-            .message-box-mobile {
-                display: block;
+        /* Responsive Design for Mobile Devices */
+        @media (max-width: 768px) {
+            .message-box {
+                margin-top: 120px;
                 padding: 15px;
-                margin-top: 120px; /* Extra margin for mobile */
-                text-align: center;
-                background: white;
-                border-radius: 15px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
-                            0 6px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
                 width: 90%;
-                min-height: 250px;
             }
 
             h1 {
                 font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
             }
 
             .balloon img {
@@ -138,35 +135,91 @@ p {
             }
 
             .balloon-left {
-                left: -80px;
+                left: -30px;
             }
 
             .balloon-right {
-                right: -80px;
+                right: -30px;
             }
         }
 
-        /* Additional adjustments for smaller devices */
+        /* Mobile view (less than 480px) */
         @media (max-width: 480px) {
+            /* Hide the desktop version */
+            .message-box {
+                display: none;
+            }
+
+            /* Show the mobile version */
+            .mobile-message-box {
+                display: block;
+                text-align: center;
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                width: 90%;
+                margin: 100px auto;
+                position: relative;
+                z-index: 1;
+            }
+
+            .mobile-message-box h1 {
+                font-size: 1.4rem;
+                color: #ff6347;
+            }
+
+            .mobile-message-box p {
+                font-size: 1rem;
+                color: #333;
+                margin-top: 15px;
+            }
+
+            .mobile-balloon {
+                position: absolute;
+                top: -30px;
+                animation: wiggle 2s infinite ease-in-out;
+            }
+
+            .mobile-balloon img {
+                width: 60px;
+            }
+
+            .mobile-balloon-left {
+                left: -20px;
+            }
+
+            .mobile-balloon-right {
+                right: -20px;
+            }
+        }
+        
+        /* Very small devices, less than 360px */
+        @media (max-width: 360px) {
+            .message-box {
+                margin-top: 100px;
+                padding: 5px;
+                width: 100%;
+            }
+
             h1 {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.8rem;
             }
 
             .balloon img {
-                width: 50px;
+                width: 40px;
             }
 
             .balloon-left {
-                left: -60px;
+                left: -15px;
             }
 
             .balloon-right {
-                right: -60px;
-            }
-
-            .message-box-mobile {
-                padding: 10px;
-                margin-top: 150px; /* Increase top margin for very small screens */
+                right: -15px;
             }
         }
 
