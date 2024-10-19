@@ -41,15 +41,15 @@
 
         /* Balloon styling */
          .balloon {
-            width: 60px; /* Adjust size of SVG balloon */
+            width: 10px; /* Adjust size of SVG balloon */
             animation: wiggle 4s infinite ease-in-out;
             z-index: 2; /* Ensure balloons are behind the message box */
-            position: relative;
-            top: 0px;
+            position: absolute;
+            top: -40px;
         }
 
         .balloon img {
-            width: 80px; /* Adjust the size for the balloons */
+            width: 10px; /* Adjust the size for the balloons */
         }
 
         .balloon-left {
@@ -113,7 +113,7 @@
             }
 
             .balloon {
-                width: 60px; /* Smaller balloons for mobile */
+                width: 40px; /* Smaller balloons for mobile */
             }
 
             .balloon.left {
@@ -142,7 +142,7 @@
             }
 
             .balloon {
-                width: 50px; /* Even smaller balloons */
+                width: 30px; /* Even smaller balloons */
             }
 
             .balloon.left {
