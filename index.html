@@ -41,9 +41,10 @@
 
    /* Balloon Styling */
         .balloon {
-            width: 10px; /* Reduced size of the balloons */
+            width: 15px; /* Reduced size of the balloons */
             animation: fallBalloon 6s infinite ease-in-out; /* Balloon fall animation */
             z-index: 3; /* Ensure balloons are in front of the message box */
+            animation: wiggle 4s infinite ease-in-out;
             position: absolute;
             top: -10px;
         }
@@ -55,13 +56,13 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(100px);
+                transform: translateY(200px);
                 opacity: 0;
             }
         }
 
         .balloon img {
-            width: 10px; /* Adjust the size for the balloons */
+            width: 15px; /* Adjust the size for the balloons */
         }
 
 
