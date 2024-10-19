@@ -40,11 +40,12 @@
         }
 
         /* Balloon styling */
-        .balloon {
+         .balloon {
+            width: 80px; /* Adjust size of SVG balloon */
+            animation: wiggle 4s infinite ease-in-out;
+            z-index: 0; /* Ensure balloons are behind the message box */
             position: absolute;
-            top: -70px;
-            z-index: 2;
-            animation: wiggle 2s infinite ease-in-out;
+            top: -60px;
         }
 
         .balloon img {
@@ -59,13 +60,22 @@
             right: -40px;
         }
 
-        /* Wiggle animation for the balloons */
+       /* Balloon wiggle animation */
         @keyframes wiggle {
-            0%, 100% {
-                transform: translateY(-10px);
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Confetti fall animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
             }
-            50% {
-                transform: translateY(10px);
+            100% {
+                transform: translateY(500px);
+                opacity: 0;
             }
         }
 
